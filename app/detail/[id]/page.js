@@ -6,7 +6,6 @@ export default async function Detail({ params }) {
   const post = await db
     .collection("posts")
     .findOne({ _id: new ObjectId(params.id) });
-  console.log(params);
   return (
     <div>
       <h4>상세페이지</h4>

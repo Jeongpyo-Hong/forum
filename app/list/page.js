@@ -12,10 +12,18 @@ export default async function List() {
   return (
     <div className="list-bg">
       {posts?.map((item, i) => (
-        <Link className="list-item" key={i} href={`/detail/${item._id}`}>
-          <h4>{item.title}</h4>
-          <p>1월 1일</p>
-        </Link>
+        <div className="list-item" key={i}>
+          <Link href={`/detail/${item._id}`} prefetch={false}>
+            <h4>{item.title}</h4>
+            <p>{item.content}</p>
+          </Link>
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+          >
+            <p>1월 1일</p>
+            <Link href={`/edit/${item._id}`}>🖋️</Link>
+          </div>
+        </div>
       ))}
     </div>
   );
