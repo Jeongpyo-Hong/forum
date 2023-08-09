@@ -3,7 +3,7 @@
  */
 import { MongoClient } from "mongodb";
 const url =
-  "mongodb+srv://hjeongpyo:jpghd4457@forum.khpds4s.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://hjeongpyo:jpghd4457@forum.khpds4s.mongodb.net/forum?retryWrites=true&w=majority";
 const options = { useNewUrlParser: true };
 let connectDB;
 

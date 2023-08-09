@@ -5,6 +5,18 @@ a {
   text-decoration: none;
   color: black;
 }
+.navbar {
+  background: white;
+  padding: 20px;
+}
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  font-weight: bold;
+}
 .list-bg {
   background: rgb(249, 250, 255);
   padding: 10px;
@@ -16,6 +28,8 @@ a {
   padding: 20px;
   margin-bottom: 5px;
   box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
+  opacity: 1;
+  transition: all 1s;
 }
 .list-item h4 {
   font-size: 20px;
@@ -28,6 +42,10 @@ a {
 }
 
 .list-item a {
+  cursor: pointer;
+}
+
+.delete-item {
   cursor: pointer;
 }
 
@@ -45,4 +63,5 @@ button {
   background: lightgray;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }

@@ -4,10 +4,11 @@ import { useState } from "react";
 
 export default function Form({ post }) {
   const [form, setForm] = useState({
+    id: post._id,
     title: post.title,
     content: post.content,
   });
-  const { title, content } = form;
+  const { id, title, content } = form;
   const onChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -17,7 +18,8 @@ export default function Form({ post }) {
   };
 
   return (
-    <form action="/api/posts/new" method="PATCH">
+    <form action="/api/posts/edit" method="POST">
+      <input type="hidden" name="id" defaultValue={id.toString()} />
       <input
         type="text"
         name="title"
