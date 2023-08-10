@@ -24,10 +24,18 @@ export default function ListItem({ result, session }) {
             <p>{item.content}</p>
           </Link>
           <p>1월 1일</p>
-          <Link href={`/edit/${item._id}`}>🖋️</Link>
-          <span className="delete-item" onClick={(e) => deleteHandler(item, e)}>
-            ❌
-          </span>
+          {session?.user.email === item.author ||
+          session?.user.role === "admin" ? (
+            <div>
+              <Link href={`/edit/${item._id}`}>🖋️</Link>
+              <span
+                className="delete-item"
+                onClick={(e) => deleteHandler(item, e)}
+              >
+                ❌
+              </span>
+            </div>
+          ) : null}
         </div>
       ))}
     </div>
