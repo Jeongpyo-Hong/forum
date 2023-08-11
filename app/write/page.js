@@ -1,5 +1,6 @@
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
+import Image from "./Image";
 
 export default async function Write() {
   const session = await getServerSession(authOptions);
@@ -12,6 +13,7 @@ export default async function Write() {
           <input type="text" name="title" placeholder="글 제목" />
 
           <input type="text" name="content" placeholder="글 내용" />
+          <Image />
           <button type="submit">버튼</button>
         </form>
       ) : (
